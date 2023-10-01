@@ -10,8 +10,10 @@ import CreateListing from "./pages/CreateListing";
 import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import axios from "axios";
 
 const App = () => {
+  axios.defaults.baseURL = "https://dreamdwell.onrender.com";
   return (
     <BrowserRouter>
       <Header />
