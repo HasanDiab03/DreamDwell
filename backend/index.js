@@ -23,12 +23,12 @@ app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/listing", listingRoutes);
 
-// const __dirname = path.resolve();
-// app.use(express.static(path.join(__dirname, "/frontend/dist")));
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-// app.get("*", (req, res) =>
-//   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
-// );
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
+);
 
 app.use(notFound);
 app.use(errorHanlder);
